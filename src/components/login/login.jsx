@@ -4,10 +4,30 @@ import {AiFillGithub} from "react-icons/ai"
 import {BsGoogle} from "react-icons/bs"
 import {FaFacebookF} from "react-icons/fa"
 import { Link } from "react-router-dom";
+import { Formik, useFormik } from "formik";
+import * as Yup from "yup";
 
 
 
 const Login = ()=>{
+
+
+  const formik = useFormik({
+    initialValues:{
+      email:"",
+      password:""
+    },
+validationSchema:Yup.object({
+  email:Yup.string().email("Invalid email Address").required("Email is required"),
+  password:Yup.string().max(10, "Please correct password").required("password Didn't Match")
+}),
+onSubmit:(values)=>{
+  console.log(values);
+}
+
+  });
+
+  console.log(formik);
     return(
         <div className="w-full h-screen shadow-md flex items-center justify-center bg-cyan-500">
       <div
@@ -44,23 +64,28 @@ const Login = ()=>{
           <hr className="w-3/6" />
         </div>
         <div className="w-full">
-          <form >
+          <form onSubmit={formik.handleSubmit}>
             <div className="form-control">
               <input type="email"
-              name="Email"
+              name="email"
               placeholder="Email"
+              value={formik.values.email}
+              onChange={formik.handleChange}
               className="p-3 px-9 text-xl border-2"
               />
             </div>
-           <p>name is mandatory</p>
+           {formik.errors.email && <span className="text-red-500">Email is required</span>}
            <div className="form-control">
               <input type="password"
               name="password"
               placeholder="password"
+              value={formik.values.password}
+              onChange={formik.handleChange}
               className="p-3 px-9 text-xl border-2"
               />
             </div>
-           <p>name is mandatory</p>
+            {formik.errors.password && <span className="text-red-500">password is required</span>}
+           
 
             <div className="p-2 flex items-center justify-center ">
               <button

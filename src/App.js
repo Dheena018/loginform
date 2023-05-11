@@ -1,10 +1,13 @@
 
 import './App.css';
+import Login from './components/login/login';
+import SignUp from './components/signup/signup';
 
 function App() {
   return (
     <div className="App">
-          <h1>dheena</h1>
+          <Login />
+          <SignUp />
     </div>
   );
 }

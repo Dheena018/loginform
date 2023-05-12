@@ -11,7 +11,16 @@ import * as Yup from "yup";
 
 const Login = ()=>{
 
-
+  const Users =(
+        {
+          "email":"dheena@gmail.com",
+        "password":"Dheena@123"
+      },
+      {
+        "email":"akash@gmail.com",
+        "password":"Akash@123",
+      }
+  )
   const formik = useFormik({
     initialValues:{
       email:"",
@@ -23,6 +32,12 @@ validationSchema:Yup.object({
 }),
 onSubmit:(values)=>{
   console.log(values);
+
+  if(Users.email === formik.values.email && Users.password===formik.values.password){
+    console.log("log in success");
+  }else{
+    console.log('user invalid');
+  }
 }
 
   });

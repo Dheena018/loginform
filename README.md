@@ -68,3 +68,32 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+<React.StrictMode>
+    <BrowserRouter>
+    <AuthContextProvider>
+    <App />
+    </AuthContextProvider>
+    </BrowserRouter>
+  </React.StrictMode>
+);
+import React from "react";
+import ReactDOM from "react-dom/client"
+import "/index.css";
+import App from "./App";
+import { BrowserRouter } from "react-router-dom";
+import { AuthContextProvider } from "./context/AuthContext";
+
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  
+<React.StrictMode>
+    <BrowserRouter>
+    <AuthContextProvider>
+    <App />
+    </AuthContextProvider>
+    </BrowserRouter>
+  </React.StrictMode>
+);

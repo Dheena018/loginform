@@ -12,7 +12,7 @@ function App() {
 
   // const currentUser = true;
   
-  const {currentUser} = useContext(AuthContext)
+  const {currentUser} = useContext(AuthContext);
 
 
   const RequireAuth = ({children})=>{

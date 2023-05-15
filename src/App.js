@@ -7,6 +7,7 @@ import SignUp from './components/signup/signup';
 import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 import Navbar from './pages/navbar';
+import Home from './pages/home';
 function App() {
 
   // const currentUser = true;
@@ -22,7 +23,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        
+          <Route path='/' element={<Home />}></Route>
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/navbar' element={<Navbar />}></Route>

@@ -36,10 +36,10 @@ const SignUp = ()=>{
       <div className="flex justify-center bg-cyan-500 items-center h-screen">
         <form
           onSubmit={formik.handleSubmit}
-          className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+          className="bg-white shadow-md rounded px-8 pt-10 pb-8"
         >
           <h2 className="text-center text-black font-bold text-2xl mb-4">
-            Create An <Typed strings={["Account"]} typeSpeed={40} />
+            Create Your <Typed strings={["Profile"]} typeSpeed={40} />
           </h2>
           <div className="mb-4">
             <label
@@ -209,7 +209,7 @@ const SignUp = ()=>{
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
-              Create Account
+              Create Profile
             </button>
             <Link
               to="/login"

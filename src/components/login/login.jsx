@@ -52,7 +52,7 @@ const Login = ()=>{
     navigate("/navbar")
   })
   .catch((error) => {
-    Swal.fire('Any fool can use a computer')
+    // Swal.fire('Any fool can use a computer')
     setErrors(true)
   });
   };

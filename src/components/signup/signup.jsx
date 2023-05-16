@@ -2,33 +2,49 @@ import { Link } from "react-router-dom";
 import Typed from 'react-typed';
 import { useFormik } from "formik";
 import * as Yup from "yup";
+// import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const SignUp = ()=>{
 
+  const navigate =useNavigate()
+
+
   const formik = useFormik({
-    initialValues:{
-      first_name:"",
-      last_name:"",
-      email:"",
-      phoneno:"",
-      address:"",
-      pincode:"",
-      gender:"",
+    initialValues: {
+      first_name: "",
+      last_name: "",
+      email: "",
+      phoneno: "",
+      address: "",
+      pincode: "",
+      gender: "",
     },
-    validationSchema:Yup.object({
-      first_name:Yup.string().max(12,"Invalid first_name").required("first_name is required"),
-      last_name:Yup.string().max(1,"Invalid last_name").required("last_name is required"),
-      email:Yup.string().email("Invalid email address").required("email is required"),
-      phoneno:Yup.number().max(9999999999,"maximum 10 numbes").min(11111111,"minimum 10 digits").required("Enter phone no properly"),
-      address:Yup.string().max(20,"max 20 character").required("enter your address"),
-      pincode:Yup.number().max(20,"max 20 character").required("Enter proper only")
-
-
+    validationSchema: Yup.object({
+      first_name: Yup.string()
+        .max(12, "Invalid first_name")
+        .required("first_name is required"),
+      last_name: Yup.string()
+        .max(1, "Invalid last_name")
+        .required("last_name is required"),
+      email: Yup.string()
+        .email("Invalid email address")
+        .required("email is required"),
+      phoneno: Yup.number()
+        .max(9999999999, "maximum 10 numbes")
+        .min(11111111, "minimum 10 digits")
+        .required("Enter phone no properly"),
+      address: Yup.string()
+        .max(20, "max 20 character")
+        .required("enter your address"),
+      pincode: Yup.number()
+        .min(6, "max 20 character")
+        .required("Enter proper only"),
     }),
-    onSubmit:(values)=>{
+    onSubmit: (values) => {
       console.log(values);
-    }
+    },
   });
   // console.log(formik.values);
 
@@ -208,6 +224,7 @@ const SignUp = ()=>{
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded focus:outline-none focus:shadow-outline"
               type="submit"
+              onClick={navigate('/navbar')}
             >
               Create Profile
             </button>

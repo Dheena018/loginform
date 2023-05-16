@@ -24,7 +24,7 @@ const Login = ()=>{
 
   const navigate = useNavigate();
 
-  const {dispatch} = useContext(AuthContext)
+  const {dispatch} = useContext(AuthContext);
 
   const handleSubmit = (e)=>{
     e.preventDefault();

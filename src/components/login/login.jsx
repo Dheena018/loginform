@@ -13,6 +13,7 @@ import Swal from 'sweetalert2'
 
 const Login = ()=>{
 
+
   const [errors,setErrors] = useState(false);
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
@@ -31,11 +32,20 @@ const Login = ()=>{
     const user = userCredential.user;
 
     dispatch({type:"Login",payload:user})
-    navigate("/navbar")
+    console.log(user);
   })
   .catch((error) => {
     setErrors(true)
   });
+  if(email === "dheena@gmail.com"){
+    navigate("/NavbarOne")
+  }
+  if(email === "akashsrma@gmail.com"){
+    navigate("/navbartwo")
+  }
+  if(email === "karthickeyan@gmail.com"){
+    navigate("navbarthree")
+  }
   };
 
   // const Users =(

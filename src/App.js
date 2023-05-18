@@ -7,6 +7,9 @@ import SignUp from './components/signup/signup';
 import { useContext } from 'react';
 import { AuthContext } from './context/AuthContext';
 import Navbar from './pages/navbar';
+import NavbarOne from './pages/NavbarOne';
+import NavbarTwo from './pages/NavbarTwo';
+import NavbarThree from './pages/NavbarThree';
 // import Home from './pages/home';
 function App() {
 
@@ -27,6 +30,9 @@ function App() {
           <Route path='/' element={<Login />} />
           <Route path='/signup' element={<SignUp />} />
           <Route path='/navbar' element={<Navbar />}></Route>
+          <Route path='/navbarone' element={<NavbarOne />}></Route>
+          <Route path='/navbartwo' element={<NavbarTwo />}></Route>
+          <Route path='/navbarthree' element={<NavbarThree />}></Route>
          
           </Routes>
     </div>

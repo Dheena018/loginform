@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 // import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const SignUp = ()=>{
@@ -43,6 +44,11 @@ const SignUp = ()=>{
         .required("Enter proper only"),
     }),
     onSubmit: (values) => {
+      Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+      )
       console.log(values);
     },
   });

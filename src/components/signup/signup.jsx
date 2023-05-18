@@ -3,13 +3,13 @@ import Typed from 'react-typed';
 import { useFormik } from "formik";
 import * as Yup from "yup";
 // import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
 const SignUp = ()=>{
 
-  const navigate =useNavigate()
+  // const navigate =useNavigate()
 
 
   const formik = useFormik({
@@ -55,10 +55,10 @@ const SignUp = ()=>{
   // console.log(formik.values);
 
     return (
-      <div className="flex justify-center bg-cyan-500 items-center h-screen">
+      <div className="flex justify-center shadow-4xl items-center h-screen">
         <form
           onSubmit={formik.handleSubmit}
-          className="bg-white shadow-md rounded px-8 pt-10 pb-8"
+          className="bg-white shadow-md rounded px-8 pt-10 pb-8 w-96"
         >
           <h2 className="text-center text-black font-bold text-2xl mb-4">
             Create Your <Typed strings={["Profile"]} typeSpeed={40} />
@@ -190,7 +190,7 @@ const SignUp = ()=>{
             )}
           </div>
 
-          <div>
+          {/* <div>
             <div>
               <label
                 htmlFor="gender"
@@ -225,21 +225,21 @@ const SignUp = ()=>{
                 </label>
               </div>
             </div>
-          </div>
-          <div className="flex items-center justify-between">
+          </div> */}
+          <div className="flex items-center justify-center">
             <button
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 my-3 rounded focus:outline-none focus:shadow-outline"
+              className="bg-blue-500  hover:bg-blue-700 text-white font-bold w-96 py-2 px-8 my-3 rounded focus:outline-none focus:shadow-outline"
               type="submit"
-              onClick={navigate('/navbar')}
+              // onClick={navigate('/navbar')}
             >
-              Create Profile
+              Next
             </button>
-            <Link
+            {/* <Link
               to="/login"
               className="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800"
             >
               Already have an account? Log in.
-            </Link>
+            </Link> */}
           </div>
         </form>
       </div>

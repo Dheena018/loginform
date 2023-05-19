@@ -101,7 +101,7 @@ const NavbarThree = ()=>{
         <th>Saturday/Sunday</th>
           <th>Monday</th>
           <th>Tuesday</th>
-          <th>wensday</th>
+          <th>wednesday</th>
           <th>Thursday</th>
           <th>Friday</th>
        

@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword  } from "firebase/auth";
 import { auth } from "../../utils/firebase";
 import { AuthContext } from "../../context/AuthContext";
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2'
 
 // import { Formik, useFormik } from "formik";
 // import * as Yup from "yup";
